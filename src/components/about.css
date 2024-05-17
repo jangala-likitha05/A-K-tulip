@@ -1,0 +1,226 @@
+/* Form container */
+.form {
+    max-width: 40em;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  
+  /* Form field */
+  .field {
+    width: 100%;
+    margin-bottom: 1.5em; /* Added margin at the bottom */
+  }
+  
+  /* Half-width field */
+  .field.half {
+    @media screen and (min-width: 40em) {
+      width: calc(50% - 1px);
+    }
+  }
+  
+  /* Last field alignment */
+  .field.last {
+    margin-left: auto;
+  }
+  
+  
+  
+  /* Input fields */
+  .text-input,
+  .textarea,
+  .button {
+    width: 100%;
+  }
+  
+  /* Textarea */
+  .textarea {
+    max-width: 100%;
+  }
+  
+  /* Select dropdown */
+  .select {
+    text-indent: 0.01px;
+    text-overflow: "";
+  }
+  
+  .select::-ms-expand {
+    display: none;
+  }
+  
+  /* Checkboxes and options */
+  .checkboxes,
+  .options {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    overflow: hidden;
+  }
+  
+  /* Checkbox and option styling */
+  .checkbox,
+  .option {
+    float: left;
+    margin: 1px;
+  }
+  
+  /* Custom select */
+  .customSelect {
+    pointer-events: none;
+  }
+  
+  .customSelect:after {
+    content: '';
+    pointer-events: none;
+    width: .5em;
+    height: .5em;
+    border-style: solid;
+    border-color: var(--label); /* Assuming --label is defined elsewhere */
+    border-width: 0 3px 3px 0;
+    position: absolute;
+    top: 50%;
+    margin-top: -.625em;
+    right: 1em;
+    transform-origin: 0 0;
+    transform: rotate(45deg);
+  }
+  
+  /* Magic focus effect */
+  .magic-focus {
+    position: absolute;
+    z-index: 0;
+    width: 0;
+    background: rgba(255, 255, 255, .15);
+    transition: top .2s, left .2s, width .2s;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    will-change: top, left, width;
+    transform-origin: 0 0;
+  }
+  
+  /* Label styling */
+  .label {
+    font-weight: bold;
+    color: var(--label); /* Assuming --label is defined elsewhere */
+    padding-top: 0;
+    padding-left: 0;
+    letter-spacing: .025em;
+    font-size: 1.125em;
+    line-height: 1.25;
+    position: relative;
+    z-index: 100;
+  }
+  
+  /* Required label indicator */
+  .label.required:after {
+    content: '\0020*';
+    color: var(--error); /* Assuming --error is defined elsewhere */
+    font-weight: normal;
+    font-size: .75em;
+    vertical-align: top;
+  }
+  /* Button styles */
+  .button-group {
+    display: flex;
+  }
+  
+  .button {
+    font: inherit;
+    line-height: normal;
+    cursor: pointer;
+    background: var(--vibrant); /* Assuming --vibrant is defined elsewhere */
+    color: black;
+    font-weight: bold;
+    padding: .5em 1em;
+    border: 2px solid black; /* Add border */
+    border-radius: 5px;
+    margin-right: 10px; /* Adjust spacing between buttons */
+    transition: padding 0.3s ease; /* Add transition */
+  }
+  
+  /* Button hover, focus, and active styles */
+  .button:hover,
+  .button:focus,
+  .button:active {
+    color: #fff;
+    background-color: #4E4E4E; /* Adjust as needed */
+    border-color: black; /* Change border color on hover, focus, and active */
+    padding: .6em 1.1em; /* Adjust padding on hover */
+  }
+  
+  .button:active {
+    position: relative;
+    top: 1px;
+  }
+  
+  .text-input {
+    border: 1px solid black; /* Remove black border */
+    border-radius: 8px; /* Add border radius */
+    padding: 10px; /* Adjust padding for desired size */
+    font-size: 16px; /* Adjust font size for desired size */
+  }
+  
+  .textarea {
+    border: 1px solid black; /* Remove black border */
+    border-radius: 8px; /* Add border radius */
+    padding: 10px; /* Adjust padding for desired size */
+    font-size: 16px; /* Adjust font size for desired size */
+  }
+  .button-post{
+    background-color: lightblue;
+    padding: 5px;
+    border-radius: 5px;
+    height: 40px;
+    width: 100px;
+  }
+  
+  .button-post:hover{
+    background-color: lightblue;
+    border-radius: 5px;
+    height: 45px;
+    width: 105px;
+    padding: 10px;
+  }
+  
+  .checkbox-label {
+    display: flex; /* Use flexbox to align items */
+    align-items: center; /* Align items vertically */
+  }
+  
+  .checkbox-label input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid black; /* Border color */
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+    margin-right: 8px; /* Adjust margin to create gap between checkbox and text */
+  }
+  
+  /* Add custom black color when checkbox is checked */
+  .checkbox-label input[type="checkbox"]:checked {
+    background-color: black;
+  }
+  
+  /* Adjust color of checkbox label text */
+  .checkbox-label {
+    color: black; /* Text color */
+  }
+  
+  /* CSS for success message */
+.success-message {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+  
